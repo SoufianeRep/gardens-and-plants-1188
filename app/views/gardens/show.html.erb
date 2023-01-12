@@ -9,9 +9,24 @@
 <div class="container">
   <div class="row">
     <div class="col-8 my-3">
-      <h2>No plants in this garden yet, add some!</h2>
+      <% if @garden.plants.any? %>
+        <div class="container">
+          <div class="row">
+            <% @garden.plants.each do |plant| %>
+              <%= render 'gardens/plant', plant: plant %>
+            <% end %>
+          </div>
+        </div>
+      <% else %>
+        <h2>No plants in this garden yet, add some!</h2>
+      <% end %>
     </div>
     <div class="col-4 my-3">
+      <%= simple_form_for [@garden, @plant] do |f| %>
+        <%= f.input :name %>
+        <%= f.input :image_url %>
+        <%= f.submit :submit, class: "btn btn-primary" %>
+      <% end %>
     </div>
   </div>
 </div>
