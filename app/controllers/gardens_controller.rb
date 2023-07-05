@@ -51,7 +51,11 @@ class GardensController < ApplicationController
   # DELETE /gardens/1 or /gardens/1.json
   def destroy
     @garden.destroy
-    redirect_to gardens_path, status: :see_other
+
+    respond_to do |format|
+      format.html { redirect_to gardens_url, notice: "Garden was successfully destroyed." }
+      format.json { head :no_content }
+    end
   end
 
   private

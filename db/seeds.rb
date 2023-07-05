@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 if Rails.env.development?
   puts "Destroying all the gardens and tags..."
   # Plant.destroy_all not needed because we have dependent destroy
@@ -9,13 +10,17 @@ shinjuku = Garden.create!(
   name: "Shinjuku Gyoen, Tokyo",
   banner_url: "https://d20aeo683mqd6t.cloudfront.net/wp-content/uploads/2015/03/Shinjuku_Gyoen_National_Garden_-_sakura_3.jpg"
   )
+=======
+Garden.destroy_all if Rails.env.development?
+>>>>>>> parent of c91301c (livecode base)
 
 Garden.create!(
-  name: "Kourakuen, Okayama",
-  banner_url: "https://a3.cdn.japantravel.com/photo/33658-163285/1440x960!/okayama-jardin-korakuen-okayama-163285.jpg"
-  )
+  name: "My Little Garden",
+  banner_url: "https://raw.githubusercontent.com/lewagon/fullstack-images/master/rails/parks-and-plants/garden_1.jpg"
+)
 
 Garden.create!(
+<<<<<<< HEAD
   name: "Risturin, Takamatsu",
   banner_url: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Ritsurin.JPG"
   )
@@ -57,3 +62,8 @@ Plant.create!(
 )
   
 puts "Seeding done!"
+=======
+  name: "My Other Garden",
+  banner_url: "https://raw.githubusercontent.com/lewagon/fullstack-images/master/rails/parks-and-plants/garden_2.jpg"
+)
+>>>>>>> parent of c91301c (livecode base)
